@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fl.fastLease.mapper.TestMapper">
+
+    <resultMap type="com.fl.fastLease.model.Test" id="testResult">
+        <result property="userId" column="user_id"/>
+        <result property="ip" column="ip"/>
+        <result property="conversationId" column="conversation_id"/>
+        <result property="firstChatMessageId" column="first_chat_message_id"/>
+        <result property="firstMessageId" column="first_message_id"/>
+        <result property="title" column="title"/>
+        <result property="apiType" column="api_type"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="testResult">
+        select * from chat_room
+    </select>
+</mapper>
